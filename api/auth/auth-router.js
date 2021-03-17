@@ -72,7 +72,7 @@ const token = jwt.sign({
   role_name: user.role_name
 }, JWT_SECRET)
 
-res.cookie('token', token)
+// res.cookie('token', token)
 
 res.json({
   message: `${username} is back!`,
