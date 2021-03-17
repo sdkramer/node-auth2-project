@@ -24,7 +24,7 @@ const {username, password, role_name} = req.body
 
 const newUser = await Users.add({
   username,
-  password: await bcrypt.hash(password, 2),
+  password: await bcrypt.hash(password, process.env.BCRYPT_TIME_COMPLEXITY || 1),
   role_name
 })
 
